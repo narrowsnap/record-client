@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { UserService } from '../../service/user/user.service';
 
 @Component({
-  selector: 'app-nav',
+  selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
@@ -12,6 +12,7 @@ export class RegisterComponent implements OnInit {
   password: string;
   re_pass: string;
   warning: string = '';
+  data: any;
 
   constructor(
     private userService: UserService,
@@ -31,10 +32,11 @@ export class RegisterComponent implements OnInit {
         .subscribe(
           data => {
             console.log(data);
-            if(data.status === 200) {
+            this.data = data;
+            if(this.data.status === 200) {
               this.router.navigate(['/login'])
             } else {
-              alert(data.message);
+              alert(this.data.message);
             }
           },
           err => {

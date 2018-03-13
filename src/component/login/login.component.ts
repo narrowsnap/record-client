@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { UserService } from '../../service/user/user.service'
 
 @Component({
-  selector: 'app-nav',
+  selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
   warning: string = '';
+  data: any;
 
   constructor(
     private userService: UserService,
@@ -28,11 +29,12 @@ export class LoginComponent implements OnInit {
       this.userService.login(this.username, this.password)
         .subscribe(
           data => {
-            console.log(data);
-            if(data.status === 200) {
+            this.data = data;
+            if(this.data.status === 200) {
+              localStorage.setItem('username', this.username);
               this.router.navigate(['/home'])
             } else {
-              alert(data.message);
+              alert(this.data.message);
             }
           },
           err => {

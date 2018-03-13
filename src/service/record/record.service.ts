@@ -5,13 +5,26 @@ import { HTTP_HOST } from '../config';
 
 @Injectable()
 export class RecordService {
-  url: string = HTTP_HOST + '/user/';
+  url: string = HTTP_HOST + '/record/';
 
   constructor(
     private http: HttpClient
   ) { }
 
-  addRecord(username: string, password: string) {
-    return this.http.post(this.url+'register', {username: username, password: password})
+  initRecord(username: string) {
+    return this.http.post(this.url+'initRecord', {username: username})
   }
+
+  addRecord(username: string, title: string) {
+    return this.http.post(this.url+'addRecord', {username: username, title: title})
+  }
+
+  updateRecord(record) {
+    return this.http.post(this.url+'updateRecord', {record: record})
+  }
+
+  getRecordById(record_id: string) {
+    return this.http.post(this.url+'getRecordById', {record_id: record_id})
+  }
+
 }

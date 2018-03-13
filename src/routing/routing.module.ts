@@ -5,6 +5,7 @@ import { HomeComponent } from '../component/home/home.component';
 import { PageNotFoundComponent } from '../component/page-not-found/page-not-found.component';
 import { LoginComponent } from '../component/login/login.component';
 import { RegisterComponent } from '../component/register/register.component';
+import { RecordComponent } from '../component/record/record.component';
 
 const appRoutes: Routes = [
   {
@@ -25,8 +26,8 @@ const appRoutes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'login',
-    component: LoginComponent,
+    path: 'record/:id',
+    component: RecordComponent,
   },
   {
     path: '*',

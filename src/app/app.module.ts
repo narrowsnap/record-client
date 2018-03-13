@@ -14,9 +14,12 @@ import { PageNotFoundComponent } from '../component/page-not-found/page-not-foun
 import { NavComponent } from '../component/nav/nav.component';
 import { LoginComponent } from '../component/login/login.component';
 import { RegisterComponent } from '../component/register/register.component';
+import { RecordComponent } from '../component/record/record.component';
 
 import { UserService } from '../service/user/user.service';
+import { RecordService } from '../service/record/record.service';
 
+import { TimePipe } from '../pipe/time.pipe';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,8 @@ import { UserService } from '../service/user/user.service';
     NavComponent,
     LoginComponent,
     RegisterComponent,
+    RecordComponent,
+    TimePipe
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,8 @@ import { UserService } from '../service/user/user.service';
     AlertModule
   ],
   providers: [
-    UserService
+    UserService,
+    RecordService
   ],
   bootstrap: [AppComponent]
 })

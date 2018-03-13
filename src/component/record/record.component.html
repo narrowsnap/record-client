@@ -1,0 +1,19 @@
+<div>
+  <div class="container">
+    <div class="row">
+      <h3 class="title">{{record.title}}</h3>
+    </div>
+    <div class="row">
+      <div class="time">
+        <span style="font-size: 2em">{{hour | timer}}:{{minute | timer}}:{{second | timer}}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="button col-lg-3 col-lg-offset-4 col-md-4 col-md-offset-4">
+        <button class="btn btn-default" (click)="start()">开始</button>
+        <button class="btn btn-default" (click)="end()">结束</button>
+        <button class="btn btn-default" (click)="pause()">暂停</button>
+      </div>
+    </div>
+  </div>
+</div>
