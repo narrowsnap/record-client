@@ -1,0 +1,8 @@
+<div class="container">
+  <div>{{warning}}</div>
+  <div class="customer">
+    <input type="text" class="form-control" placeholder="username" [(ngModel)]="username" required>
+    <input type="password" class="form-control" placeholder="password" [(ngModel)]="password" required>
+    <button class="c-button btn btn-default" (click)="login()">登录</button>
+  </div>
+</div>

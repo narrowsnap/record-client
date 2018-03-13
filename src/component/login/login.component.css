@@ -1,0 +1,15 @@
+.container {
+  margin-top: 10%;
+  margin-left: auto;
+}
+.customer {
+  margin: 0 auto;
+  width: 30em;
+}
+input {
+  margin-top: 1em;
+}
+.c-button {
+  margin-left: 45%;
+  margin-top: 1em;
+}
